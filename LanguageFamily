@@ -23,6 +23,10 @@ public void getInfo(){
     spanish.getInfo();
     Mayan kiche = new Mayan("Ki'che", 2330000);
     kiche.getInfo();
+    SinoTibetan mandarin = new SinoTibetan("Mandarin Chinese", 1110000000);
+    mandarin.getInfo();
+    SinoTibetan burmese = new SinoTibetan("Burmese", 43000000);
+    burmese.getInfo();
 
   }
 }
@@ -38,5 +42,16 @@ public class Mayan extends Language {
     public void getInfo() {
         super.getInfo();
         System.out.println("Fun fact: " + this.name + " is an ergative language.");
+    }
+}
+
+//SinoTibetan.java
+public class SinoTibetan extends Language{
+
+    SinoTibetan(String name, int numSpeakers) {
+        super(name, numSpeakers, "Asia", "subject-object-verb");
+        if (name.contains("Chinese")) {
+            this.wordOrder = "subject-verb-object";
+        }
     }
 }
